@@ -7,7 +7,7 @@ function evaluateNYU
 % -------------------------------------------------------------------------
 
 % Set your matconvnet path here:
-matconvnet_path = '../../matconvnet-1.0-beta20';
+matconvnet_path = '/Users/jinkijung/Downloads/matconvnet-1.0-beta20';
 setupMatConvNet(matconvnet_path);
 
 % -------------------------------------------------------------------------
@@ -17,7 +17,7 @@ setupMatConvNet(matconvnet_path);
 opts.dataDir = fullfile(pwd, 'NYU');    % working directory
 opts.interp = 'nearest';                % interpolation method applied during resizing
 
-netOpts.gpu = true;     % set to true to enable GPU support      
+netOpts.gpu = false;     % set to true to enable GPU support      
 netOpts.plot = true;    % set to true to visualize the predictions during inference          
 
 % -------------------------------------------------------------------------

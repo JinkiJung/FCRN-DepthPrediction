@@ -7,7 +7,7 @@ function evaluateMake3D
 % -------------------------------------------------------------------------
 
 % Set your matconvnet path here:
-matconvnet_path = '../../matconvnet-1.0-beta20';
+matconvnet_path = '/Users/jinkijung/Downloads/matconvnet-1.0-beta20';
 setupMatConvNet(matconvnet_path);
 
 % -------------------------------------------------------------------------
@@ -18,7 +18,7 @@ opts.dataDir = fullfile(pwd, 'Make3D');     % working directory
 opts.interp = 'nearest';    % interpolation method applied during resizing
 opts.imageSize = [460,345]; % desired image size for evaluation
 
-netOpts.gpu = true;     % set to true to enable GPU support
+netOpts.gpu = false;     % set to true to enable GPU support
 netOpts.plot = true;    % set to true to visualize the predictions during inference
 
 % -------------------------------------------------------------------------
@@ -80,7 +80,7 @@ if ~exist(opts.dataDirDepths, 'dir')
 end
 
 fprintf('preparing testing data...');
-img_files = dir(fullfile(opts.dataDirImages, 'img-*.jpg'));
+img_files = dir(fullfile(opts.dataDirImages, 'img-*.jpeg'));
 depth_files = dir(fullfile(opts.dataDirDepths, 'depth_sph_corr-*.mat'));
 
 % Verify that the correct number of files has been found
